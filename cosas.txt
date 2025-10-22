@@ -1,0 +1,9 @@
+prompt para que funcione la conexion a la bd:
+quiero que cambies el application.properties para conectar a una base de datos postgresql en supabase
+string de conexion (session pooler) (JDBC): "jdbc:postgresql://aws-1-us-east-2.pooler.supabase.com:5432/postgres?user=postgres.vrmopcgqccizpjknsqnh&password=XQON8m9Dpoa1hWUn"
+parameters: "host: aws-1-us-east-2.pooler.supabase.com
+port: 5432
+database: postgres
+user: postgres.vrmopcgqccizpjknsqnh
+pool_mode: session"
+password: "XQON8m9Dpoa1hWUn"
