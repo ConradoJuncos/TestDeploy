@@ -3,6 +3,14 @@
   <component name="CopilotDiffPersistence">
     <option name="pendingDiffs">
       <map>
+        <entry key="$PROJECT_DIR$/Dockerfile">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/Dockerfile" />
+              <option name="updatedContent" value="# Stage 1: Build&#10;FROM maven:3.9.4-eclipse-temurin-17 AS builder&#10;&#10;WORKDIR /app&#10;&#10;# Copy pom.xml and download dependencies&#10;COPY pom.xml .&#10;RUN mvn dependency:go-offline&#10;&#10;# Copy source code&#10;COPY src ./src&#10;&#10;# Build the application&#10;RUN mvn clean package -DskipTests&#10;&#10;# Stage 2: Runtime&#10;FROM eclipse-temurin:17-jre-alpine&#10;&#10;WORKDIR /app&#10;&#10;# Copy the built jar from builder stage&#10;COPY --from=builder /app/target/*.jar app.jar&#10;&#10;# Expose port&#10;EXPOSE 8080&#10;&#10;# Health check&#10;HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \&#10;  CMD java -cp app.jar org.springframework.boot.loader.JarLauncher || exit 1&#10;&#10;# Run the application&#10;ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;, &quot;app.jar&quot;]&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/pom.xml">
           <value>
             <PendingDiffInfo>
